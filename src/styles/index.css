@@ -55,6 +55,11 @@ nav {
   gap: 20px;
 }
 
+.car_card a {
+  text-decoration: none;
+  color: black;
+}
+
 .car_card {
   display: flex;
   flex-direction: column;
@@ -89,7 +94,6 @@ nav {
 
   .car_model {
     font-size: 1.2em;
-    color: #555;
     margin: 5px 0;
   }
 
