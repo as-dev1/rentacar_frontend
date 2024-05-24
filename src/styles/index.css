@@ -45,6 +45,7 @@ nav {
 }
 
 /* CARS */
+
 .cars-wrapper {
   padding: 20px;
   max-width: 1000px;
@@ -55,7 +56,6 @@ nav {
 }
 
 .car_card {
-  position: relative;
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -106,10 +106,9 @@ nav {
     &:hover {
       background-color: #e0e0e0;
     }
+  }
 
-    .car_price {
-      font-size: 1.1em;
-      color: #333;
-    }
+  .car_price {
+    font-size: 1em;
   }
 }
