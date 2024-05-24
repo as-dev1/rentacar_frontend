@@ -3,3 +3,27 @@
   margin: 0;
   padding: 0;
 }
+
+/* HEADER */
+
+header {
+  padding: 10px 100px;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 50%,
+    rgba(0, 166, 199, 1) 100%
+  );
+
+  a {
+    color: white;
+    font-size: 2rem;
+    text-decoration-line: none;
+  }
+  nav a {
+    padding-left: 20px;
+  }
+}
