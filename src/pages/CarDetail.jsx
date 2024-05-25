@@ -25,10 +25,10 @@ const CarDetail = () => {
           <div className="car-info">
             <h1>{car.brand} {car.model}</h1>
             <ul>
-              <li><b>Year:</b> {car.year}</li>
-              <li><b>Horsepower:</b> {car.hp} hp</li>
-              <li><b>Seats:</b> {car.number_of_seats}</li>
-              <li><b>Price:</b> ${car.price_per_day}/day</li>
+              <li><strong>Year:</strong> {car.year}</li>
+              <li><strong>Horsepower:</strong> {car.hp} hp</li>
+              <li><strong>Seats:</strong> {car.number_of_seats}</li>
+              <li><strong>Price:</strong> ${car.price_per_day}/day</li>
             </ul>
           </div>
         </div>
