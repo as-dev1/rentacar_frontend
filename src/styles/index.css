@@ -126,10 +126,21 @@ nav {
 
 .car-detail-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
   background: #f9f9f9;
+}
+
+.back-to-all {
+  text-decoration: none;
+  color: black;
+  align-self: flex-start;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .car-detail {
@@ -141,7 +152,7 @@ nav {
   overflow: hidden;
   max-width: 800px;
   width: 100%;
-  margin: 20px;
+  margin: 0;
 
   .car-image {
     display: flex;
