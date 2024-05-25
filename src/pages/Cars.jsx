@@ -16,7 +16,7 @@ const Cars = () => {
 
   const carElement = cars.map((car) => (
     <div key={car.id} className="car_card">
-      <Link to={`/cars/${car.id}`}>
+      <Link to={`${car.id}`}>
         <img className="car_img" src={car.img_path} alt={`${car.brand} ${car.model}`} />
         <div className="car_stats">
           <h3>{car.brand}</h3>

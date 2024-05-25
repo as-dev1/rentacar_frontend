@@ -5,13 +5,13 @@ const Header = () => {
   return (
     <header>
       <div className="logo">
-        <Link to="/">Rent a car</Link>
+        <Link to=".">Rent a car</Link>
       </div>  
       <nav>
-        <NavLink to="/about" className={({isActive}) => isActive ? "active-page" : null}>
+        <NavLink to="about" className={({isActive}) => isActive ? "active-page" : null}>
           About
         </NavLink>
-        <NavLink to="/cars" className={({isActive}) => isActive ? "active-page" : null}>
+        <NavLink to="cars" className={({isActive}) => isActive ? "active-page" : null}>
           Cars
         </NavLink>
       </nav>
