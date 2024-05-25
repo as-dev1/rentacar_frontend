@@ -15,6 +15,28 @@ header {
   background: linear-gradient(90deg, #004e92, #000428);
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  nav {
+    display: flex;
+    gap: 20px;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #f0f0f0;
+        text-decoration: underline;
+      }
+    }
+
+    .active-page {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
 }
 
 .logo {
@@ -24,28 +46,6 @@ header {
   a {
     color: white;
     text-decoration: none;
-  }
-}
-
-nav {
-  display: flex;
-  gap: 20px;
-
-  a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: color 0.3s;
-
-    &:hover {
-      color: #f0f0f0;
-      text-decoration: underline;
-    }
-  }
-
-  .active-page {
-    font-weight: bold;
-    text-decoration: underline;
   }
 }
 
@@ -143,12 +143,18 @@ nav {
   align-items: center;
 }
 
-.car-detail {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
+.car-detail-container {
+  /* border: 5px solid; */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+}
+
+.car-detail {
+  /* border: 5px solid; */
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   max-width: 800px;
   width: 100%;
@@ -190,6 +196,19 @@ nav {
   }
 }
 
+.car-detail-nav {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ddd;
+  padding: 20px;
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+  }
+}
+
 @media (min-width: 768px) {
   .car-detail {
     flex-direction: row;
@@ -209,6 +228,10 @@ nav {
   }
 
   .car-info ul li {
+    font-size: 1.125em;
+  }
+
+  .car-detail-nav a {
     font-size: 1.125em;
   }
 }

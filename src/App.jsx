@@ -2,7 +2,10 @@ import React from "react";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Cars from "./pages/Cars";
-import CarDetail from "./pages/CarDetail";
+import CarDetail from "./pages/car detail/CarDetail";
+import CarInfo from "./pages/car detail/CarInfo"
+import CarReservations from "./pages/car detail/CarReservations"
+import CarReviews from "./pages/car detail/CarReviews"
 import Layout from "./components/Layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -14,7 +17,11 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="cars" element={<Cars />} />
-          <Route path="cars/:id" element={<CarDetail />} />
+          <Route path="cars/:id" element={<CarDetail />} >
+            <Route index element={<CarInfo />} />
+            <Route path="reservations" element={<CarReservations />} />
+            <Route path="reviews" element={<CarReviews />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
