@@ -1,9 +1,167 @@
-import React from 'react'
+import axios from "axios";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const AddCar = () => {
-  return (
-    <div>Add Car</div>
-  )
-}
+  let navigate = useNavigate();
 
-export default AddCar
+  const [car, setCar] = useState({
+    brand: "",
+    model: "",
+    type: "",
+    year: "",
+    hp: "",
+    description: "",
+    number_of_seats: "",
+    price_per_day: "",
+    img_path: "",
+  });
+
+  const { brand, model, type, year, hp, description, number_of_seats, price_per_day, img_path } = car;
+
+  const onInputChange = (e) => {
+    setCar({ ...car, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    await axios.post("http://localhost:8080/api/car", car);
+    navigate("/cars");
+  };
+
+  return (
+    <div className="container">
+      <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow text-center">
+        <h2 className="text-center m-4">Add Car</h2>
+
+        <form onSubmit={(e) => onSubmit(e)}>
+          <div className="mb-3">
+            <label htmlFor="Brand" className="form-label">
+              Brand
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter brand name"
+              name="brand"
+              value={brand}
+              onChange={(e) => onInputChange(e)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="Model" className="form-label">
+              Model
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter car model"
+              name="model"
+              value={model}
+              onChange={(e) => onInputChange(e)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="Type" className="form-label">
+              Type
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter car type"
+              name="type"
+              value={type}
+              onChange={(e) => onInputChange(e)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="Year" className="form-label">
+              Year
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter car year"
+              name="year"
+              value={year}
+              onChange={(e) => onInputChange(e)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="Hp" className="form-label">
+              Horsepower
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter car hp"
+              name="hp"
+              value={hp}
+              onChange={(e) => onInputChange(e)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="Description" className="form-label">
+              Description
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter car description"
+              name="description"
+              value={description}
+              onChange={(e) => onInputChange(e)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="number_of_seats" className="form-label">
+              Number of seats
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter number of seats"
+              name="number_of_seats"
+              value={number_of_seats}
+              onChange={(e) => onInputChange(e)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="price_per_day" className="form-label">
+              Price per day
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter price"
+              name="price_per_day"
+              value={price_per_day}
+              onChange={(e) => onInputChange(e)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="img_path" className="form-label">
+              Upload image
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter img url"
+              name="img_path"
+              value={img_path}
+              onChange={(e) => onInputChange(e)}
+            />
+          </div>
+          <button type="submit" className="btn btn-outline-primary">
+            Submit
+          </button>
+          <Link className="btn btn-outline-danger mx-2" to="/cars">
+            Cancel
+          </Link>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default AddCar;
