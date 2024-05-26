@@ -19,8 +19,8 @@ const Cars = () => {
       <Link to={`${car.id}`}>
         <img className="car_img" src={car.img_path} alt={`${car.brand} ${car.model}`} />
         <div className="car_stats">
-          <h3>{car.brand}</h3>
-          <h4>{car.model}</h4>
+          <h3 className="car_brand">{car.brand}</h3>
+          <h4 className="car_model">{car.model}</h4>
           <button className="car_type">{car.type.toLowerCase()}</button>
           <span className="car_price">Price: ${car.price_per_day} / day</span>
         </div>
