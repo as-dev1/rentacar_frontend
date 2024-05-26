@@ -5,6 +5,7 @@ import Cars from "./pages/Cars";
 import CarDetail from "./pages/car detail/CarDetail";
 import CarInfo from "./pages/car detail/CarInfo"
 import CarReservations from "./pages/car detail/CarReservations"
+import AddCar from "./pages/car detail/AddCar"
 import CarReviews from "./pages/car detail/CarReviews"
 import Layout from "./components/Layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -17,6 +18,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="cars" element={<Cars />} />
+          <Route path="addcar" element={<AddCar />} />
           <Route path="cars/:id" element={<CarDetail />} >
             <Route index element={<CarInfo />} />
             <Route path="reservations" element={<CarReservations />} />
