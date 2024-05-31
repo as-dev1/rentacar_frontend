@@ -31,74 +31,121 @@ const AddCar = () => {
 
   return (
     <div className="container">
-      <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow text-center">
+      <div className="col-md-8 offset-md-2 border rounded p-4 mt-2 shadow text-center">
         <h2 className="text-center m-4">Add Car</h2>
 
         <form onSubmit={(e) => onSubmit(e)}>
-          <div className="mb-3">
-            <label htmlFor="Brand" className="form-label">
-              Brand
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter brand name"
-              name="brand"
-              value={brand}
-              onChange={(e) => onInputChange(e)}
-            />
+          <div className="row">
+            <div className="col-md-6 mb-3">
+              <label htmlFor="Brand" className="form-label">
+                Brand
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter brand name"
+                name="brand"
+                value={brand}
+                onChange={(e) => onInputChange(e)}
+              />
+            </div>
+            <div className="col-md-6 mb-3">
+              <label htmlFor="Model" className="form-label">
+                Model
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter car model"
+                name="model"
+                value={model}
+                onChange={(e) => onInputChange(e)}
+              />
+            </div>
           </div>
-          <div className="mb-3">
-            <label htmlFor="Model" className="form-label">
-              Model
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter car model"
-              name="model"
-              value={model}
-              onChange={(e) => onInputChange(e)}
-            />
+          <div className="row">
+            <div className="col-md-6 mb-3">
+              <label htmlFor="Type" className="form-label">
+                Type
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter car type"
+                name="type"
+                value={type}
+                onChange={(e) => onInputChange(e)}
+              />
+            </div>
+            <div className="col-md-6 mb-3">
+              <label htmlFor="Year" className="form-label">
+                Year
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter car year"
+                name="year"
+                value={year}
+                onChange={(e) => onInputChange(e)}
+              />
+            </div>
           </div>
-          <div className="mb-3">
-            <label htmlFor="Type" className="form-label">
-              Type
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter car type"
-              name="type"
-              value={type}
-              onChange={(e) => onInputChange(e)}
-            />
+          <div className="row">
+            <div className="col-md-6 mb-3">
+              <label htmlFor="Hp" className="form-label">
+                Horsepower
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter car hp"
+                name="hp"
+                value={hp}
+                onChange={(e) => onInputChange(e)}
+              />
+            </div>
+            <div className="col-md-6 mb-3">
+              <label htmlFor="number_of_seats" className="form-label">
+                Number of seats
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter number of seats"
+                name="number_of_seats"
+                value={number_of_seats}
+                onChange={(e) => onInputChange(e)}
+              />
+            </div>
           </div>
-          <div className="mb-3">
-            <label htmlFor="Year" className="form-label">
-              Year
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter car year"
-              name="year"
-              value={year}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="Hp" className="form-label">
-              Horsepower
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter car hp"
-              name="hp"
-              value={hp}
-              onChange={(e) => onInputChange(e)}
-            />
+          <div className="row">
+            <div className="col-md-6 mb-3">
+              <label htmlFor="price_per_day" className="form-label">
+                Price per day
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter price"
+                name="price_per_day"
+                value={price_per_day}
+                onChange={(e) => onInputChange(e)}
+              />
+            </div>
+            <div className="col-md-6 mb-3">
+              <label htmlFor="img_path" className="form-label">
+                Upload image
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter img url"
+                name="img_path"
+                value={img_path}
+                onChange={(e) => onInputChange(e)}
+              />
+            </div>
           </div>
           <div className="mb-3">
             <label htmlFor="Description" className="form-label">
@@ -110,45 +157,6 @@ const AddCar = () => {
               placeholder="Enter car description"
               name="description"
               value={description}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="number_of_seats" className="form-label">
-              Number of seats
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter number of seats"
-              name="number_of_seats"
-              value={number_of_seats}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="price_per_day" className="form-label">
-              Price per day
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter price"
-              name="price_per_day"
-              value={price_per_day}
-              onChange={(e) => onInputChange(e)}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="img_path" className="form-label">
-              Upload image
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter img url"
-              name="img_path"
-              value={img_path}
               onChange={(e) => onInputChange(e)}
             />
           </div>
