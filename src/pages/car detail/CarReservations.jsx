@@ -28,7 +28,7 @@ const CarReservations = () => {
     const totalAmount = diffDays * pricePerDay; 
     
     return (
-      <div key={reservation.id} className="container border-bottom py-2">
+      <section key={reservation.id} className="container border-bottom py-2">
         <div className="d-flex">
           <FontAwesomeIcon icon={faUser} className="fs-4" />
           <p className="text-primary fw-bold px-2">
@@ -50,16 +50,16 @@ const CarReservations = () => {
           <strong className="px-2">Total amout: </strong>
           <span>{totalAmount} $</span>
         </p>
-      </div>
+      </section>
     );
   });
 
   return (
-    <div className="px-2">
+    <section className="px-2">
       {reservations.length ? reservationElement : 
         <p className="text-center">Currently no reservations. 😞</p>
       }
-    </div>
+    </section>
   );
 };
 

@@ -15,7 +15,7 @@ const Cars = () => {
   };
 
   const carElement = cars.map((car) => (
-    <div key={car.id} className="car_card">
+    <section key={car.id} className="car_card">
       <Link to={`${car.id}`}>
         <img className="car_img" src={car.img_path} alt={`${car.brand} ${car.model}`} />
         <div className="car_stats">
@@ -25,7 +25,7 @@ const Cars = () => {
           <span className="car_price">Price: ${car.price_per_day} / day</span>
         </div>
       </Link>
-    </div>
+    </section>
   ));
 
   return (

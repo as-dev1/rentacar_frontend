@@ -29,13 +29,13 @@ const CarDetail = () => {
   }
 
   return (
-    <div className="car-detail-wrapper">
+    <section className="car-detail-wrapper">
       <Link to=".." relative="path" className="back-to-all">
         <FontAwesomeIcon icon={faArrowLeftLong} />
         &nbsp;Back to all cars
       </Link>
       {car ? (
-        <div className="car-detail-container"> 
+        <section className="car-detail-container"> 
           <div className="car-detail">
             <div className="car-image">
               <img src={car.img_path} alt={`${car.brand} ${car.model}`} />
@@ -69,11 +69,11 @@ const CarDetail = () => {
             <NavLink to="reviews" style={({ isActive }) => isActive ? active : null}>Reviews</NavLink>
           </nav>
           <Outlet context={{ car }}/>
-        </div>
+        </section>
       ) : (
         <h2>Loading...</h2>
       )}
-    </div>
+    </section>
   );
 };
 

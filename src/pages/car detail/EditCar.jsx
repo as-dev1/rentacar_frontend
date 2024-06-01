@@ -41,7 +41,7 @@ const EditCar = () => {
   };
 
   return (
-    <div className="container">
+    <section className="container">
       <div className="col-md-8 offset-md-2 border rounded p-4 mt-2 shadow text-center">
         <h2 className="text-center m-4">Add Car</h2>
 
@@ -179,7 +179,7 @@ const EditCar = () => {
           </Link>
         </form>
       </div>
-    </div>
+    </section>
   )
 }
 
