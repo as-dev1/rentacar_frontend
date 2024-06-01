@@ -62,7 +62,7 @@ const CarDetail = () => {
             <NavLink to="reservations" style={({ isActive }) => isActive ? active : null}>Reservations</NavLink>
             <NavLink to="reviews" style={({ isActive }) => isActive ? active : null}>Reviews</NavLink>
           </nav>
-          <Outlet />
+          <Outlet context={{ car }}/>
         </div>
       ) : (
         <h2>Loading...</h2>
