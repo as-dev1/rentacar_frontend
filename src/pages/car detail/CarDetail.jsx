@@ -48,8 +48,14 @@ const CarDetail = () => {
                 <li><strong>Seats:</strong> {car.number_of_seats}</li>
                 <li><strong>Price:</strong> ${car.price_per_day}/day</li>
               </ul>
+              <Link
+                    className="btn btn-outline-primary"
+                    to={"edit"}
+                  >
+                Edit
+              </Link>
               <button
-                    className="btn btn-danger"
+                    className="btn btn-danger mx-2"
                     onClick={() => deleteCar(car.id)}
                   >
                     Delete

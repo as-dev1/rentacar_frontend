@@ -11,6 +11,7 @@ import Layout from "./components/Layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/index.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import EditCar from "./pages/car detail/EditCar";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="reservations" element={<CarReservations />} />
             <Route path="reviews" element={<CarReviews />} />
           </Route>
+          <Route path="cars/:id/edit" element={<EditCar />} />
         </Route>
       </Routes>
     </BrowserRouter>
