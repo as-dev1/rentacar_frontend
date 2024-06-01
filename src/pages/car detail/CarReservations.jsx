@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faCalendar } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faCalendar, faSackDollar } from "@fortawesome/free-solid-svg-icons";
 
 const CarReservations = () => {
   const { id } = useParams();
@@ -17,29 +17,49 @@ const CarReservations = () => {
     setReservations(result.data);
   };
 
-  const reservationElement = reservations.map((reservation) => (
-    <div key={reservation.id} className="container border-bottom py-2">
-      <div className="d-flex">
-        <FontAwesomeIcon icon={faUser} className="fs-4" />
-        <p className="text-primary fw-bold px-2">
-          {reservation.user.first_name} {reservation.user.last_name}
+  const reservationElement = reservations.map((reservation) => {
+    const startDate = new Date(reservation.start_at);
+    const endDate = new Date(reservation.end_at); 
+    const formattedStartDate = startDate.toLocaleString('sr-RS'); 
+    const formattedEndDate = endDate.toLocaleString('sr-RS'); 
+    const diffTime = Math.abs(endDate - startDate); 
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+    const pricePerDay = reservation.car.price_per_day; 
+    const totalAmount = diffDays * pricePerDay; 
+    
+    return (
+      <div key={reservation.id} className="container border-bottom py-2">
+        <div className="d-flex">
+          <FontAwesomeIcon icon={faUser} className="fs-4" />
+          <p className="text-primary fw-bold px-2">
+            {reservation.user.first_name} {reservation.user.last_name}
+          </p>
+        </div>
+        <p>
+          <FontAwesomeIcon icon={faCalendar} />
+          <strong className="px-2">From date: </strong>
+          <span className="fst-italic">{formattedStartDate}</span>
+        </p>
+        <p>
+          <FontAwesomeIcon icon={faCalendar} />
+          <strong className="px-2">To date: </strong>
+          <span className="fst-italic">{formattedEndDate}</span>
+        </p>
+        <p>
+          <FontAwesomeIcon icon={faSackDollar} className="text-success" />
+          <strong className="px-2">Total amout: </strong>
+          <span>{totalAmount} $</span>
         </p>
       </div>
-      <p>
-        <FontAwesomeIcon icon={faCalendar} />
-        <strong className="px-2">From date: </strong>
-        <span className="fst-italic">{new Date(reservation.start_at).toLocaleString('sr-RS')}</span>
-      </p>
-      <p>
-        <FontAwesomeIcon icon={faCalendar} />
-        <strong className="px-2">To date: </strong>
-        <span className="fst-italic">{new Date(reservation.end_at).toLocaleString('sr-RS')}</span>
-      </p>
-    </div>
-  ));
+    );
+  });
 
   return (
-    <div className="px-2">{reservationElement}</div>
+    <div className="px-2">
+      {reservations.length ? reservationElement : 
+        <p className="text-center">Currently no reservations. 😞</p>
+      }
+    </div>
   );
 };
 
