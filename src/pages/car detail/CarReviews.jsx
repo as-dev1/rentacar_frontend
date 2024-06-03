@@ -36,6 +36,11 @@ const CarReviews = () => {
     setUserId(""); 
     loadReviews(); 
   };
+  
+  const deleteReview = async (reviewId) => {
+    await axios.delete(`http://localhost:8080/api/review/${reviewId}`);
+    loadReviews(); 
+  };
 
   const reviewElement = reviews.map((review) => 
     <section key={review.id} className="container border-bottom py-2">
@@ -50,7 +55,9 @@ const CarReviews = () => {
         <strong className="px-2">Comment: </strong>
         <span className="fst-italic">{review.comment}</span>
       </p>
-      {/* Add here delete comment */}
+      <button className="btn btn-danger btn-sm" onClick={() => deleteReview(review.id)}>
+        Delete
+      </button>
     </section>
 
   ) 
@@ -63,7 +70,7 @@ const CarReviews = () => {
           <input
             type="text"
             className="form-control w-25"
-            placeholder="Enter user id"
+            placeholder="Id"
             id="userId"
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
