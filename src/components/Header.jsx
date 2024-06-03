@@ -14,7 +14,7 @@ const Header = () => {
   }
 
   return (
-    <header className="navbar navbar-expand-sm border-bottom shadow-sm">
+    <header className="navbar navbar-expand-sm">
       <div className="container-fluid">
         <Link className="navbar-brand fw-bold fs-4 text-light" to=".">
           Rent a car

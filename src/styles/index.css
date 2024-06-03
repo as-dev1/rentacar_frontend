@@ -5,6 +5,33 @@
   font-family: "Montserrat", sans-serif;
 }
 
+/* HOME */
+
+@media (max-width: 450px) {
+  .banner-img {
+    display: none;
+  }
+}
+
+.car-brand-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .car-brand {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 4rem;
+    }
+  }
+}
+
 /* HEADER */
 
 header {
