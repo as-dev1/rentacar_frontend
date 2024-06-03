@@ -71,7 +71,9 @@ const CarDetail = () => {
           <Outlet context={{ car }}/>
         </section>
       ) : (
-        <h2>Loading...</h2>
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
       )}
     </section>
   );
