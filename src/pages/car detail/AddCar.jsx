@@ -68,14 +68,19 @@ const AddCar = () => {
               <label htmlFor="Type" className="form-label">
                 Type
               </label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Enter car type"
+              <select 
+                className="form-control form-select" 
                 name="type"
                 value={type}
                 onChange={(e) => onInputChange(e)}
-              />
+              >
+                <option value="">Select car type</option> 
+                <option value="LUXURY">Luxury</option> 
+                <option value="SPORT">Sport</option> 
+                <option value="ELECTRIC">Electric</option> 
+                <option value="SUV">Suv</option> 
+                <option value="CONVERTIBLE">Convertible</option> 
+              </select>
             </div>
             <div className="col-md-6 mb-3">
               <label htmlFor="Year" className="form-label">
