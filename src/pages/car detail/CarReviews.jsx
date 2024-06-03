@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  faUser, faComment} from "@fortawesome/free-solid-svg-icons";
+import { faComment} from "@fortawesome/free-solid-svg-icons";
+import { PersonCircle } from "react-bootstrap-icons";
 
 const CarReviews = () => {
   const { id } = useParams();
@@ -45,7 +46,7 @@ const CarReviews = () => {
   const reviewElement = reviews.map((review) => 
     <section key={review.id} className="container border-bottom py-2">
       <div className="d-flex">
-        <FontAwesomeIcon icon={faUser} className="fs-4" />
+        <PersonCircle className="fs-4" />
         <p className="text-primary fw-bold px-2">
           {review.user.first_name} {review.user.last_name}
         </p>

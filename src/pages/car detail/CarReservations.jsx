@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faCalendar, faSackDollar } from "@fortawesome/free-solid-svg-icons";
+import { faCalendar, faSackDollar } from "@fortawesome/free-solid-svg-icons";
+import { PersonCircle } from "react-bootstrap-icons";
 
 const CarReservations = () => {
   const { id } = useParams();
@@ -30,7 +31,7 @@ const CarReservations = () => {
     return (
       <section key={reservation.id} className="container border-bottom py-2">
         <div className="d-flex">
-          <FontAwesomeIcon icon={faUser} className="fs-4" />
+          <PersonCircle className="fs-4" />
           <p className="text-primary fw-bold px-2">
             {reservation.user.first_name} {reservation.user.last_name}
           </p>
