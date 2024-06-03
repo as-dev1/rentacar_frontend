@@ -65,7 +65,7 @@ const CarReviews = () => {
   
   return (
     <section className="px-2">
-      <form onSubmit={onSubmit} className="mb-4">
+      <form onSubmit={onSubmit} className="mb-4 container">
         <div className="mb-3">
           <label htmlFor="userId" className="form-label">User ID</label>
           <input

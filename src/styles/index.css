@@ -11,6 +11,11 @@
   .banner-img {
     display: none;
   }
+
+  .custom-button {
+    width: auto;
+    font-size: 0.9rem;
+  }
 }
 
 .car-brand-wrapper {
@@ -20,7 +25,7 @@
   flex-wrap: wrap;
 
   .car-brand {
-    padding: 1em;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,6 +35,12 @@
       width: 4rem;
     }
   }
+}
+
+.custom-button {
+  bottom: 20px;
+  left: 50%; 
+  transform: translateX(-50%);
 }
 
 /* HEADER */
