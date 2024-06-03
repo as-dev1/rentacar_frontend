@@ -7,6 +7,8 @@ import {  faUser, faComment} from "@fortawesome/free-solid-svg-icons";
 const CarReviews = () => {
   const { id } = useParams();
   const [reviews, setReviews] = useState([]);
+  const [comment, setComment] = useState(""); 
+  const [userId, setUserId] = useState(""); 
 
   useEffect(() => {
     loadReviews();
@@ -15,6 +17,24 @@ const CarReviews = () => {
   const loadReviews = async () => {
     const result = await axios.get(`http://localhost:8080/api/review/car/${id}`);
     setReviews(result.data);
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const newReview = {
+      user: {
+        id: userId
+      },
+      car: {
+        id: id
+      },
+      comment: comment
+    };
+
+    await axios.post("http://localhost:8080/api/review", newReview);
+    setComment("");
+    setUserId(""); 
+    loadReviews(); 
   };
 
   const reviewElement = reviews.map((review) => 
@@ -30,12 +50,41 @@ const CarReviews = () => {
         <strong className="px-2">Comment: </strong>
         <span className="fst-italic">{review.comment}</span>
       </p>
+      {/* Add here delete comment */}
     </section>
 
   ) 
   
   return (
     <section className="px-2">
+      <form onSubmit={onSubmit} className="mb-4">
+        <div className="mb-3">
+          <label htmlFor="userId" className="form-label">User ID</label>
+          <input
+            type="text"
+            className="form-control w-25"
+            placeholder="Enter user id"
+            id="userId"
+            value={userId}
+            onChange={(e) => setUserId(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="comment" className="form-label">Comment</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Enter your comment"
+            id="comment"
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">Submit</button>
+      </form>
+
       {reviews.length ? reviewElement : 
         <p className="text-center">Currently no reviews. 😞</p>
       }
