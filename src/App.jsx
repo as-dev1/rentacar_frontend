@@ -8,12 +8,12 @@ import CarDetail from "./pages/car detail/CarDetail";
 import CarInfo from "./pages/car detail/CarInfo"
 import CarReservations from "./pages/car detail/CarReservations"
 import AddCar from "./pages/car detail/AddCar"
+import EditCar from "./pages/car detail/EditCar";
 import CarReviews from "./pages/car detail/CarReviews"
 import Layout from "./components/Layout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/index.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
-import EditCar from "./pages/car detail/EditCar";
 
 const App = () => {
   return (
