@@ -5,7 +5,11 @@ import { Link, useSearchParams } from "react-router-dom";
 const Cars = () => {
   const [cars, setCars] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [selectedType, setSelectedType] = useState("");
+  const [selectedType, setSelectedType] = useState(() => {
+    const type = searchParams.get("type");
+    const price = searchParams.get("price");
+    return type || price || ""; 
+  });
 
   const typeFilter = searchParams.get("type");
   const priceFilter = searchParams.get("price");

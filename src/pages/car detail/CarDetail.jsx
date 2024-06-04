@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams, Link, NavLink, Outlet, useNavigate } from "react-router-dom";
+import { useParams, Link, NavLink, Outlet, useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 
@@ -8,6 +8,7 @@ const CarDetail = () => {
   const [car, setCar] = useState(null);
   const { id } = useParams();
   let navigate = useNavigate();
+  const location = useLocation();
 
   const active = {
     textDecoration: "underline",
@@ -30,7 +31,7 @@ const CarDetail = () => {
 
   return (
     <section className="car-detail-wrapper">
-      <Link to=".." relative="path" className="back-to-all">
+      <Link to={`..${location.search}`} relative="path" className="back-to-all">
         <FontAwesomeIcon icon={faArrowLeftLong} />
         &nbsp;Back to all cars
       </Link>
