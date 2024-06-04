@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Cars from "./pages/Cars";
 import Users from "./pages/Users";
 import EditUser from "./pages/EditUser";
+import Error from "./pages/Error";
 import CarDetail from "./pages/car detail/CarDetail";
 import CarInfo from "./pages/car detail/CarInfo"
 import CarReservations from "./pages/car detail/CarReservations"
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="reviews" element={<CarReviews />} />
           </Route>
           <Route path="cars/:id/edit" element={<EditCar />} />
+          <Route path="*" element={<Error />} />
         </Route>
       </Routes>
     </BrowserRouter>
