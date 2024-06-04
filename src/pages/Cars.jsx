@@ -1,9 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const Cars = () => {
   const [cars, setCars] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const typeFilter = searchParams.get("type");
 
   useEffect(() => {
     loadCars();
@@ -14,7 +17,18 @@ const Cars = () => {
     setCars(result.data);
   };
 
-  const carElement = cars.map((car) => (
+  const displayedCars = typeFilter ? cars.filter(car => car.type.toLowerCase() === typeFilter) : cars;
+
+  const handleFilterChange = (e) => {
+    const selectedType = e.target.value;
+    if (selectedType === "") {
+      setSearchParams("");
+    } else {
+      setSearchParams(`?type=${selectedType}`);
+    }
+  };
+
+  const carElement = displayedCars.map((car) => (
     <section key={car.id} className="car_card">
       <Link to={`${car.id}`}>
         <img className="car_img" src={car.img_path} alt={`${car.brand} ${car.model}`} />
@@ -29,9 +43,21 @@ const Cars = () => {
   ));
 
   return (
-    <main className="cars-wrapper">
-      {carElement}
-    </main>
+    <>
+      <div className="d-flex justify-content-end my-3 custom-align"> 
+        <select className="form-select w-auto" onChange={handleFilterChange} defaultValue=""> 
+          <option value="">Select a type</option>
+          <option value="luxury">Luxury</option>
+          <option value="sport">Sport</option>
+          <option value="electric">Electric</option>
+          <option value="suv">SUV</option>
+          <option value="convertible">Convertible</option>
+        </select>
+      </div>
+      <main className="cars-wrapper">
+        {carElement}
+      </main>
+    </>
   );
 };
 

@@ -55,6 +55,11 @@ header {
 
 /* CARS */
 
+.custom-align {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
 .cars-wrapper {
   padding: 20px;
   max-width: 1000px;
