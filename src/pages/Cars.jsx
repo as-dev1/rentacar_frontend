@@ -5,6 +5,7 @@ import { Link, useSearchParams } from "react-router-dom";
 const Cars = () => {
   const [cars, setCars] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [selectedType, setSelectedType] = useState("");
 
   const typeFilter = searchParams.get("type");
 
@@ -17,15 +18,21 @@ const Cars = () => {
     setCars(result.data);
   };
 
-  const displayedCars = typeFilter ? cars.filter(car => car.type.toLowerCase() === typeFilter) : cars;
+  const displayedCars = typeFilter ? cars.filter((car) => car.type.toLowerCase() === typeFilter) : cars;
 
   const handleFilterChange = (e) => {
     const selectedType = e.target.value;
+    setSelectedType(selectedType);
     if (selectedType === "") {
       setSearchParams("");
     } else {
       setSearchParams(`?type=${selectedType}`);
     }
+  };
+
+  const handleClearFilter = () => {
+    setSearchParams("");
+    setSelectedType("");
   };
 
   const carElement = displayedCars.map((car) => (
@@ -44,8 +51,13 @@ const Cars = () => {
 
   return (
     <>
-      <div className="d-flex justify-content-end my-3 custom-align"> 
-        <select className="form-select w-auto" onChange={handleFilterChange} defaultValue=""> 
+      <div className="d-flex justify-content-end my-3 custom-align">
+        {typeFilter ? (
+          <button className="btn btn-outline-secondary mx-1" onClick={handleClearFilter}>
+            Clear filter
+          </button>
+        ) : null}
+        <select className="form-select w-auto" onChange={handleFilterChange} value={selectedType}>
           <option value="">Select a type</option>
           <option value="luxury">Luxury</option>
           <option value="sport">Sport</option>
@@ -54,9 +66,7 @@ const Cars = () => {
           <option value="convertible">Convertible</option>
         </select>
       </div>
-      <main className="cars-wrapper">
-        {carElement}
-      </main>
+      <main className="cars-wrapper">{carElement}</main>
     </>
   );
 };
