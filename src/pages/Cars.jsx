@@ -8,6 +8,7 @@ const Cars = () => {
   const [selectedType, setSelectedType] = useState("");
 
   const typeFilter = searchParams.get("type");
+  const priceFilter = searchParams.get("price");
 
   useEffect(() => {
     loadCars();
@@ -18,21 +19,36 @@ const Cars = () => {
     setCars(result.data);
   };
 
-  const displayedCars = typeFilter ? cars.filter((car) => car.type.toLowerCase() === typeFilter) : cars;
+  const displayedCars = cars
+    .filter((car) => (typeFilter ? car.type.toLowerCase() === typeFilter : true))
+    .sort((a, b) => {
+      if (priceFilter === "asc") {
+        return a.price_per_day - b.price_per_day;
+      }
+      if (priceFilter === "desc") {
+        return b.price_per_day - a.price_per_day;
+      }
+      return 0;
+    });
 
   const handleFilterChange = (e) => {
-    const selectedType = e.target.value;
-    setSelectedType(selectedType);
-    if (selectedType === "") {
+    const selectedOption = e.target.value;
+    setSelectedType(selectedOption);
+
+    if (selectedOption === "") {
       setSearchParams("");
+    } else if (selectedOption === "price_asc") {
+      setSearchParams("?price=asc");
+    } else if (selectedOption === "price_desc") {
+      setSearchParams("?price=desc");
     } else {
-      setSearchParams(`?type=${selectedType}`);
+      setSearchParams(`?type=${selectedOption}`);
     }
   };
 
   const handleClearFilter = () => {
     setSearchParams("");
-    setSelectedType("");
+    setSelectedType(""); 
   };
 
   const carElement = displayedCars.map((car) => (
@@ -52,7 +68,7 @@ const Cars = () => {
   return (
     <>
       <div className="d-flex justify-content-end my-3 custom-align">
-        {typeFilter ? (
+        {typeFilter || priceFilter ? (
           <button className="btn btn-outline-secondary mx-1" onClick={handleClearFilter}>
             Clear filter
           </button>
@@ -64,6 +80,8 @@ const Cars = () => {
           <option value="electric">Electric</option>
           <option value="suv">SUV</option>
           <option value="convertible">Convertible</option>
+          <option value="price_asc">Price: Low to High</option> 
+          <option value="price_desc">Price: High to Low</option>
         </select>
       </div>
       <main className="cars-wrapper">{carElement}</main>
