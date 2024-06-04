@@ -1,7 +1,8 @@
 import React from "react";
-import About from "./pages/About";
 import Home from "./pages/Home";
 import Cars from "./pages/Cars";
+import Users from "./pages/Users";
+import EditUser from "./pages/EditUser";
 import CarDetail from "./pages/car detail/CarDetail";
 import CarInfo from "./pages/car detail/CarInfo"
 import CarReservations from "./pages/car detail/CarReservations"
@@ -19,9 +20,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
           <Route path="cars" element={<Cars />} />
           <Route path="addcar" element={<AddCar />} />
+          <Route path="users" element={<Users />} />
+          <Route path="edituser/:id" element={<EditUser />} />
           <Route path="cars/:id" element={<CarDetail />} >
             <Route index element={<CarInfo />} />
             <Route path="reservations" element={<CarReservations />} />

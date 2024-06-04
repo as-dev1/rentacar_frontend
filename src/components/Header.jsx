@@ -35,8 +35,8 @@ const Header = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="about" className="nav-link fs-5 text-light" style={({ isActive }) => isActive ? active : null}>
-                About
+              <NavLink to="users" className="nav-link fs-5 text-light" style={({ isActive }) => isActive ? active : null}>
+                Users
               </NavLink>
             </li>
           </ul>
