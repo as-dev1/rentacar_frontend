@@ -32,8 +32,11 @@ Note: This application requires a backend server to be running for full function
 ## Website desktop preview:
 
 ![image](https://github.com/as-dev1/rentacar_backend/assets/162376613/8b53f393-320b-486a-b333-e8722831a236)
-![image](https://github.com/as-dev1/rentacar_backend/assets/162376613/8c658bf1-e99d-4f82-bb67-1d4f8723f9f1)
-![image](https://github.com/as-dev1/rentacar_backend/assets/162376613/e7224f93-e413-4f1e-86ec-a8b814d21fc1)
+![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/68a41a66-531f-4316-acb9-210fb378859d)
+![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/180f38c9-4ca5-4948-a727-37a09e7ef16e)
+![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/35dd1cfe-6042-4645-9258-c66c26026587)
+![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/25a31868-c58a-4a97-8196-8ef7e42c01e9)
 
 ## Website mobile preview:
-![image](https://github.com/as-dev1/rentacar_backend/assets/162376613/dea4fe7c-4e74-4db1-900c-ada643ce93fb) ![image](https://github.com/as-dev1/rentacar_backend/assets/162376613/ded24f4e-7c8d-4a5a-b5bb-ae5fb9d924f3)
+![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/e4ca2058-da7e-435b-b798-3bf16bbe0156) ![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/cbf1ab23-60e2-4eb1-9179-597f497099ac)
+![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/b74bf777-33f6-409d-aae1-e8dd50c37a8b) ![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/9ac31d1f-8830-4f73-95be-43f437caec9a)
