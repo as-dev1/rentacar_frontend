@@ -19,9 +19,9 @@ const Header = () => {
         <Link className="navbar-brand fw-bold fs-4 text-light" to=".">
           Rent a car
         </Link>
-        <button className="navbar-toggler" type="button" onClick={toggleNavbar} aria-expanded={!isCollapsed} aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        <div className={`menu-btn ${!isCollapsed ? "open" : ""}`} onClick={toggleNavbar}>
+          <div className="menu-btn-burger"></div>
+        </div>
         <nav className={`collapse navbar-collapse ${!isCollapsed ? "show" : ""}`}>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
             <li className="nav-item">
