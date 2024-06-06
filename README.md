@@ -38,5 +38,5 @@ Note: This application requires a backend server to be running for full function
 ![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/25a31868-c58a-4a97-8196-8ef7e42c01e9)
 
 ## Website mobile preview:
-![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/e4ca2058-da7e-435b-b798-3bf16bbe0156) ![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/cbf1ab23-60e2-4eb1-9179-597f497099ac)
-![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/b74bf777-33f6-409d-aae1-e8dd50c37a8b) ![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/9ac31d1f-8830-4f73-95be-43f437caec9a)
+![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/e4ca2058-da7e-435b-b798-3bf16bbe0156) ![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/4cd4c404-0467-4e73-8eb6-478f99ae897b)
+![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/b74bf777-33f6-409d-aae1-e8dd50c37a8b) ![image](https://github.com/as-dev1/rentacar_frontend/assets/162376613/65ee17e4-c627-477f-99ec-78990ec69708)
